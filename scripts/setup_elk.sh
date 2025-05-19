@@ -3,19 +3,15 @@
 
 # Перезапускаем компоненты ELK
 echo "Запуск Elasticsearch..."
-sudo systemctl restart elasticsearch.service
-
-# Проверяем запуск Elasticsearch
-echo "Ожидание запуска Elasticsearch (это может занять около минуты)..."
-sleep 20
-# Подставьте ваш пароль для elastic (закомментировано для безопасности)
-# curl -k --user elastic:ВАША_ПАРОЛЬ https://127.0.0.1:9200
+sudo systemctl start elasticsearch.service
+sudo systemctl status elasticsearch.service
 
 echo "Запуск Kibana..."
-sudo systemctl restart kibana.service
+sudo systemctl start kibana.service
+sudo systemctl status kibana.service
 
 echo "Запуск Logstash..."
-sudo systemctl restart logstash.service
+sudo systemctl start logstash.service
+sudo systemctl status logstash.service
 
-echo "ELK-стек запущен!"
 echo "Kibana доступна по адресу: http://84.201.151.216:5601"
