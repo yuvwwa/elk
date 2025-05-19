@@ -2,7 +2,8 @@
 ## Отчет по настройке ELK и централизованного сбора логов
 ### Настроенная инфраструктура
 
-Развернутый ELK-стек (Elasticsearch, Logstash, Kibana) на виртуальной машине по инструкции: https://github.com/vesninam/elk/blob/main/elk/README.md
+ELK (Elasticsearch, Logstash, Kibana) на виртуальной машине по инструкции: https://github.com/vesninam/elk/blob/main/elk/README.md
+
 * Версия: 8.13.2 (self-managed)
 * Доступен через следующие порты:
   
@@ -13,6 +14,8 @@
       Logstash: 5044
   
 Filebeat для сбора логов из файлов и отправки в ELK
+
+Инструкция: https://www.elastic.co/docs/manage-data/ingest/ingesting-data-from-applications/ingest-logs-from-python-application-using-filebeat
 
 * Настроен для мониторинга файла с JSON-логами приложения
 * Отправляет логи напрямую в Elasticsearch через защищенное соединение
@@ -54,7 +57,7 @@ URL приложения: `http://84.201.151.216:8000`
 * Логин: elastic
 * Пароль: your_password
 
-Созданные визуализации в Kibana:
+### Созданные визуализации в Kibana:
 
 * Дашборд "first dashboard" с визуализациями по уровням логов и содержимому сообщений
 
