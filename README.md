@@ -26,16 +26,21 @@ Filebeat для сбора логов из файлов и отправки в E
 ### Структура репозитория:
 
 ```
+/
 ├── app/
-│   ├── elvis.py             # Скрипт, генерирующий JSON-логи
-│   ├── elvis.json           # Пример формата логов
-│   ├── logging_app.py       # FastAPI приложение для демонстрации сбора логов
-│   └── requirements.txt     # Зависимости Python
-└── config/
-    ├── filebeat.yml         # Конфигурация Filebeat
-    ├── logstash.conf        # Основная конфигурация Logstash
-    ├── logstash_input.conf  # Конфигурация входов Logstash
-    └── logstash_output.conf # Конфигурация выходов Logstash
+│   ├── elvis.py            # Скрипт, генерирующий JSON-логи
+│   ├── elvis.json          # Пример формата логов
+│   ├── logging_app.py      # FastAPI приложение для демонстрации сбора логов
+│   └── requirements.txt    # Зависимости Python
+├── config/
+│   ├── filebeat.yml        # Конфигурация Filebeat
+│   ├── logstash.conf       # Основная конфигурация Logstash
+│   ├── logstash_input.conf # Конфигурация входов Logstash
+│   └── logstash_output.conf # Конфигурация выходов Logstash
+└── scripts/
+    ├── setup_elk.sh        # Скрипт настройки и запуска ELK
+    ├── start_app.sh        # Скрипт запуска приложения-генератора логов
+    └── start_filebeat.sh   # Скрипт запуска Filebeat
 ```
 
 ### Демонстрация работы
