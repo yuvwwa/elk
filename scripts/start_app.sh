@@ -1,11 +1,11 @@
 #!/bin/bash
-# Скрипт для запуска приложения, генерирующего логи
+# Скрипт для запуска приложения, генерирующего логи (filebeat)
 
 # Активируем виртуальное окружение, если оно используется
-source ~/venv/bin/activate 2>/dev/null || source ~/elastic_venv/bin/activate 2>/dev/null || echo "No virtualenv found, using system Python"
+source ~/venv/bin/activate
 
-# Очищаем предыдущий файл логов (опционально)
-rm -f ~/elk/app/elvis.json 2>/dev/null
+# Очищаем предыдущий файл логов
+rm -f ~/elk/app/elvis.json
 
 # Запускаем приложение для генерации логов
 cd ~/elk/app
