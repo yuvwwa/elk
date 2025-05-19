@@ -1,10 +1,11 @@
 #!/bin/bash
-# Этот скрипт запускает filebeat для отправки логов в Elasticsearch
+# Скрипт для настройки и запуска Filebeat для сбора логов
 
-# Убедитесь, что файл конфигурации скопирован в нужное место
-sudo cp config/filebeat.yml /etc/filebeat/filebeat.yml
+# Копируем конфигурацию в системную директорию
+sudo cp ~/elk/config/filebeat.yml /etc/filebeat/filebeat.yml
 
-# Перезапускаем filebeat для применения настроек
+# Перезапускаем Filebeat
 sudo systemctl restart filebeat
 
 echo "Filebeat запущен и отправляет логи в Elasticsearch"
+echo "Для проверки статуса выполните: sudo systemctl status filebeat"

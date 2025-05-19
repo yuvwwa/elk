@@ -1,19 +1,21 @@
 #!/bin/bash
 # Скрипт для настройки и запуска Elasticsearch, Kibana и Logstash
 
-# Запускаем компоненты ELK
+# Перезапускаем компоненты ELK
 echo "Запуск Elasticsearch..."
-sudo systemctl start elasticsearch.service
+sudo systemctl restart elasticsearch.service
 
 # Проверяем запуск Elasticsearch
-echo "Ожидание запуска Elasticsearch..."
-sleep 10
-curl -k --user elastic:YOUR_PASSWORD https://127.0.0.1:9200
+echo "Ожидание запуска Elasticsearch (это может занять около минуты)..."
+sleep 20
+# Подставьте ваш пароль для elastic (закомментировано для безопасности)
+# curl -k --user elastic:ВАША_ПАРОЛЬ https://127.0.0.1:9200
 
 echo "Запуск Kibana..."
-sudo systemctl start kibana.service
+sudo systemctl restart kibana.service
 
-echo "Запуск Logstash (если используется)..."
-sudo systemctl start logstash.service
+echo "Запуск Logstash..."
+sudo systemctl restart logstash.service
 
-echo "ELK-стек запущен! Kibana доступна по адресу: http://SERVER_IP:5601"
+echo "ELK-стек запущен!"
+echo "Kibana доступна по адресу: http://84.201.151.216:5601"
